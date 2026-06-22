@@ -1,0 +1,393 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'PT Sans Narrow';
+    src: url('fonts/PTSans-Narrow.woff2') format('woff2'),
+        url('fonts/PTSans-Narrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body, html {
+  font-family: 'PT Sans Narrow', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+
+/* Header con video */
+.video-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Menú flotante superior */
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  font-size: large;
+}
+
+/* "maldigo" a la izquierda */
+.nav-left {
+  color: rgba(16, 2, 99, 0.808);
+  padding: 10px 15px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav-left:hover {
+  color: rgba(38, 0, 255, 0.808);
+}
+
+/* Enlaces a la derecha */
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: rgba(16, 2, 99, 0.808);
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.nav-right a:hover {
+  color: rgba(38, 0, 255, 0.808);
+}
+
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+/* Responsive INDEX */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-header {
+    height: 70vh;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu {
+    flex-direction: column;
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+  }
+}
+
+/* Estilo para páginas de proyecto */
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-container h1 {
+  max-width: 1200px;
+  font-size: 2rem;
+  margin-top: 40px;
+  padding: 0px 5px 0px 200px;
+  text-align: left;
+}
+
+.project-container p {
+  max-width: 1200px;
+  margin-top: 20px;
+  padding: 0px 5px 0px 200px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.back-arrow {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 8px 12px;
+  z-index: 20;
+}
+
+.back-arrow:hover {
+  color: rgba(38, 0, 255, 0.808);
+}
+
+
+
+/* Responsive PAGINA PROYECTO1 */
+@media (max-width: 600px) {
+  .project-container h1 {
+    text-align: right;
+    padding: 40px 20px 0px 20px;
+  }
+
+   .project-container P {
+    text-align: right;
+    padding: 10px 20px 20px 70px;
+   }
+}
+
+
+/* Estilo para páginas de plantilla2 */
+.project2-container {
+  display: flex;
+  /*flex-direction: column;*/
+  gap: 20px;
+}
+
+.project2-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.project2-container h1 {
+  max-width: 100%;
+  margin-top: 10px;
+  padding: 70px 20px 20px 20px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.project2-container p {
+  max-width: 1200px;
+  margin: 10px auto auto 70px;
+  padding: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.project2-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 70%;
+  justify-content: flex-end;
+}
+
+.project2-gallery img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.fila video {
+  flex: 1 1 45%;     /* dos por fila */
+  height: 100vh;     /* ocupa toda la altura visible */
+  object-fit: cover; /* mantiene proporción y recorta si es necesario */
+  width: 100%;       /* ocupa el ancho de su contenedor flex */
+  max-width: 100%;    /* asegura que 2 videos quepan por fila */
+  border-radius: 6px; /* opcional */
+}
+
+.fila img {
+ flex: 0 1 40%;     /* dos imágenes por fila */
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* o contain si prefieres no recortar */
+}
+
+.fila-sansil {
+  display: flex;
+  flex-wrap: wrap;        /* Permite que las imágenes pasen a otra fila */
+  gap: 10px;              /* Espacio entre imágenes */
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.fila-sansil img{
+  flex: 0 1 calc(10% - 10px); /* 🔹 3 imágenes por fila (resta el gap) */
+  max-height: 60vh;  
+  height: auto;             /* No ocupan más del 80% de la altura visible */
+  width: 100%;
+  object-fit: cover;              /* Se recortan sin deformarse */
+  display: block;
+}
+
+.fila-camis {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;       /* permite que pasen a otra línea si no caben */
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  overflow-x: hidden;    /* evita scroll horizontal */
+  box-sizing: border-box;
+}
+
+.fila-camis img {
+  flex: 1 1 calc(50% - 10px); /* dos por fila, restando el gap */
+  max-width: calc(50% - 10px); /* asegura que no se pasen de la mitad */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;        /* evita espacios en línea entre imágenes */
+}
+
+
+/* Responsive PAGINA plantilla2 */
+
+@media (max-width: 600px){
+
+.project2-container h1 {
+  margin: 0px;
+}
+
+.project2-container{
+  flex-direction: column;
+}
+
+.project2-gallery{
+  max-width: 100% !important;
+  justify-content: center;
+
+}
+
+.project2-gallery img{
+  box-shadow: none;
+}
+
+.fila {
+    flex-direction: column; /* una en cada columna */
+    width: 100%;
+  }
+
+  .fila video {
+    width: 100%;
+    height: auto; /* evita ocupar toda la altura */
+    object-fit: contain;
+  }
+
+  .fila-sansil {
+    flex-direction: column;  /* Cada imagen en columna */
+    align-items: center;
+  }
+
+  .fila-sansil img {
+    width: 100%;        /* Ocupa todo el ancho del móvil */
+    max-height: none;   /* Se ajusta al ancho, no a la altura */
+  }
+
+  .fila-camis {
+    flex-direction: column; /* apila las imágenes */
+  }
+
+  .fila-camis img {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: calc(100%);
+  }
+
+}

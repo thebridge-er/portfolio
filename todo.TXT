@@ -1,0 +1,3 @@
+- Bajar de resolución todas las minuaturas para que cargue más rápido.
+- Desarrollar animación del logo de la sansil.
+- Roll ups y vinilos de lowi meterlos en mock ups.
